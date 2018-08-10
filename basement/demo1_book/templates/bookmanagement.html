@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form>
+    {{ myform.authorname.label }}{{ myform.authorname }}<br>
+    {{ myform.bookname.label }}{{ myform.bookname }}<br>
+    {{ myform.submit }}
+</form>
+<hr>
+{% for a in authors %}
+    <ul>
+        <li>{{ a.name }}</li>
+        {% for b in a.books %}
+        <ul>
+            <li>{{ b.name }}</li>
+        </ul>
+        {% endfor %}
+    </ul>
+{% endfor %}
+</body>
+</html>
